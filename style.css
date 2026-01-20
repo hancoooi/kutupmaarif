@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #eef6f9;
+}
+
+header {
+  background-color: #0b3c5d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+#calendar {
+  width: 30%;
+}
+
+.day {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-left: 5px solid #0b3c5d;
+  border-radius: 5px;
+}
+
+.day:hover {
+  background-color: #dceef5;
+}
+
+#content {
+  width: 70%;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+}
