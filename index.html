@@ -4,95 +4,67 @@
 <meta charset="UTF-8">
 <title>Kutup Maarif Takvimi</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  display: flex;
-  height: 100vh;
-}
+body {margin:0;font-family:Arial;display:flex;height:100vh;}
 
 #sidebar {
-  width: 220px;
-  background: #0b3c5d;
-  color: white;
-  padding: 20px;
-}
-
-#sidebar h2 {
-  text-align: center;
-  margin-bottom: 20px;
+  width:220px;
+  background:#0b3c5d;
+  color:white;
+  padding:20px;
 }
 
 .month {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #1d5b82;
+  padding:10px;
+  cursor:pointer;
+  border-bottom:1px solid #1d5b82;
 }
+.month:hover {background:#1d5b82;}
 
-.month:hover {
-  background: #1d5b82;
-}
-
-#main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
+#main {flex:1;display:flex;flex-direction:column;}
 
 #header {
-  padding: 20px;
-  text-align: center;
-  background: #e6f2ff;
+  background:#d9ecff;
+  text-align:center;
+  padding:20px;
 }
 
-#header h1 {
-  margin: 0;
-  font-size: 32px;
-  letter-spacing: 2px;
+#header h1 {margin:0;}
+#header p {margin:5px 0 0;}
+
+#monthBar {
+  background:#bcdfff;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  padding:10px;
 }
 
-#header p {
-  margin: 5px 0 0;
-  font-style: italic;
-}
-
-#contentArea {
-  flex: 1;
-  display: flex;
-}
+#contentArea {flex:1;display:flex;}
 
 #days {
-  width: 300px;
-  background: #f0f0f0;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  width:300px;
+  background:#f0f0f0;
+  padding:20px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
 }
 
 .day {
-  background: white;
-  padding: 15px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
+  background:white;
+  padding:15px;
+  text-align:center;
+  cursor:pointer;
+  border-radius:5px;
 }
+.day:hover {background:#cce7ff;}
 
-.day:hover {
-  background: #cce7ff;
-}
-
-#content {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
-}
+#content {flex:1;padding:30px;overflow-y:auto;}
 </style>
 </head>
 <body>
 
 <div id="sidebar">
-  <h2>Aylar</h2>
   <div class="month" onclick="loadMonth('ocak')">Ocak</div>
   <div class="month" onclick="loadMonth('subat')">Şubat</div>
   <div class="month" onclick="loadMonth('mart')">Mart</div>
@@ -112,14 +84,13 @@ body {
     <h1>KUTUP MAARİF TAKVİMİ</h1>
     <p>Bir Gün Bir Kutup Olayı</p>
   </div>
-  <div id="monthBar" style="background:#d9ecff;text-align:center;
-font-size:22px;font-weight:bold;padding:10px;">
-</div>
+
+  <div id="monthBar"></div>
 
   <div id="contentArea">
+    <div id="days"></div>
     <div id="content">
       <h2>Hoş geldin</h2>
-      <p>Soldan ay seç, sonra bir güne tıkla.</p>
     </div>
   </div>
 </div>
@@ -180,7 +151,7 @@ KAYNAKÇA<br>
 };
 
 function loadMonth(month){
- document.getElementById("monthBar").innerText = month.toUpperCase();
+  document.getElementById("monthBar").innerText = month.toUpperCase();
 
   const daysDiv = document.getElementById("days");
   daysDiv.innerHTML = "";
@@ -193,9 +164,9 @@ function loadMonth(month){
     const d = document.createElement("div");
     d.className="day";
     d.innerText=i;
-    d.onclick = function(){
-      let text = "Henüz girilmedi.";
-      if(month=="temmuz" && julyData[i]) text = julyData[i];
+    d.onclick=function(){
+      let text="Henüz girilmedi.";
+      if(month=="temmuz" && julyData[i]) text=julyData[i];
       document.getElementById("content").innerHTML =
         "<h2>"+i+" "+month.toUpperCase()+"</h2><p>"+text+"</p>";
     };
@@ -206,11 +177,3 @@ function loadMonth(month){
 
 </body>
 </html>
-
-
-
-
-
-
-
-
