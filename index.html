@@ -4,56 +4,14 @@
 <meta charset="UTF-8">
 <title>Kutup Maarif Takvimi - Temmuz</title>
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  display: flex;
-  height: 100vh;
-}
-
-#months {
-  width: 200px;
-  background: #0b3c5d;
-  color: white;
-  padding: 20px;
-}
-
-#months div {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #1d5b82;
-}
-
-#months div:hover {
-  background: #1d5b82;
-}
-
-#days {
-  width: 300px;
-  background: #f0f0f0;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.day {
-  background: white;
-  padding: 15px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.day:hover {
-  background: #cce7ff;
-}
-
-#content {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
-}
+body {margin:0;font-family:Arial;display:flex;height:100vh;}
+#months{width:200px;background:#0b3c5d;color:white;padding:20px;}
+#months div{padding:10px;cursor:pointer;border-bottom:1px solid #1d5b82;}
+#months div:hover{background:#1d5b82;}
+#days{width:300px;background:#f0f0f0;padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.day{background:white;padding:15px;text-align:center;cursor:pointer;border-radius:5px;}
+.day:hover{background:#cce7ff;}
+#content{flex:1;padding:30px;overflow-y:auto;}
 </style>
 </head>
 <body>
@@ -63,61 +21,148 @@ body {
 </div>
 
 <div id="days"></div>
-
-<div id="content">
-  <h2>Gün seç</h2>
-  <p>Soldan Temmuz'u seç, sonra bir güne tıkla.</p>
-</div>
+<div id="content"><h2>Gün seç</h2></div>
 
 <script>
 const julyData = {
-  1: "1 Temmuz içeriği buraya",
-  2: "2 Temmuz içeriği buraya",
-  3: "3 Temmuz içeriği buraya",
-  4: "4 Temmuz içeriği buraya",
-  5: "5 Temmuz içeriği buraya",
-  6: "6 Temmuz içeriği buraya",
-  7: "7 Temmuz içeriği buraya",
-  8: "8 Temmuz içeriği buraya",
-  9: "9 Temmuz içeriği buraya",
-  10: "10 Temmuz içeriği buraya",
-  11: "11 Temmuz içeriği buraya",
-  12: "12 Temmuz içeriği buraya",
-  13: "13 Temmuz içeriği buraya",
-  14: "14 Temmuz içeriği buraya",
-  15: "15 Temmuz içeriği buraya",
-  16: "16 Temmuz içeriği buraya",
-  17: "17 Temmuz içeriği buraya",
-  18: "18 Temmuz içeriği buraya",
-  19: "19 Temmuz içeriği buraya",
-  20: "20 Temmuz içeriği buraya",
-  21: "21 Temmuz içeriği buraya",
-  22: "22 Temmuz içeriği buraya",
-  23: "23 Temmuz içeriği buraya",
-  24: "24 Temmuz içeriği buraya",
-  25: "25 Temmuz içeriği buraya",
-  26: "26 Temmuz içeriği buraya",
-  27: "27 Temmuz içeriği buraya",
-  28: "28 Temmuz içeriği buraya",
-  29: "29 Temmuz içeriği buraya",
-  30: "30 Temmuz içeriği buraya",
-  31: "31 Temmuz içeriği buraya"
+
+1: `İlk Bilgi<br>
+MacGregor Arktik Seferinin Başlangıcı (1937)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+1 Temmuz 1937’de MacGregor Arktik Seferi başladı.<br><br>
+
+Sefer, Kanada’nın Ellesmere Adası’ndaki Fort Conger bölgesine ulaşarak Kuzey Kutbu çevresinde meteoroloji, jeomanyetizma ve kutup ışıkları üzerine bilimsel gözlemler yapmak amacıyla düzenlendi. Araştırma gemisi Donald II ile yürütülen çalışmalar, zorlu kış koşulları da dâhil olmak üzere 1938 sonbaharına kadar devam etti. Bu sefer, Kuzey Kutbu’nda modern ve sistematik bilimsel ölçümlerin uygulanması açısından önemlidir. Özellikle hava durumu, manyetik alan ve aurora gözlemleri, Arktik bölgenin fiziksel koşullarının daha iyi anlaşılmasına katkı sağlamış ve sonraki kutup araştırmalarına bilimsel altyapı oluşturmuştur.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://kids.kiddle.co/MacGregor_Arctic_Expedition" target="_blank">
+https://kids.kiddle.co/MacGregor_Arctic_Expedition
+</a>`,
+
+2: `İlk Bilgi<br>
+CONTRASTS Kutup Araştırma Seferi’nin Başlangıcı (2025)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+Alfred Wegener Enstitüsü tarafından yürütülen CONTRASTS (PS149) projesi, 2025 yazında Arktik Okyanusu'ndaki deniz buzlarının erime süreçlerini ve bu süreçlerin ekosistem üzerindeki etkilerini incelemeyi hedefleyen kapsamlı bir keşif gezisidir. Araştırma kapsamında, mevsimlik buzdan çok yıllık yaşlı buzlara kadar üç farklı buz rejimindeki fiziksel, oşinografik ve biyokimyasal değişimler, Polarstern araştırma gemisi ve otonom istasyonlar aracılığıyla gözlemlenmiştir. Elde edilen verilerle Arktik bölgesindeki iklim değişikliğinin nedenleri ve sonuçlarının daha iyi anlaşılması, böylece gelecekteki çevresel etkilerin daha isabetli öngörülmesi amaçlanmaktadır.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://www.awi.de/en/science/climate-sciences/sea-ice-physics/projects/translate-to-english-contrasts.html" target="_blank">
+https://www.awi.de/en/science/climate-sciences/sea-ice-physics/projects/translate-to-english-contrasts.html
+</a>`,
+
+3: `İlk Bilgi<br>
+ABD’nin Antarktika Antlaşması Çevre Koruma Protokolü’nü İmzalaması<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+ABD Başkanı George H. W. Bush, 1959 Antarktika Antlaşması’na ek çevresel koruma protokolü çerçevesinde Antarktika’da 50 yıl süreyle madenciliği yasaklayan uluslararası anlaşmayı (Madencilik Protokolü) imzalayacağını açıkladı. Bu kararla ABD, uzun süredir karşı çıktığı madencilik yasağı içeren protokole onay vermiştir.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://shorturl.at/Y42qq" target="_blank">
+https://shorturl.at/Y42qq
+</a>`,
+
+4: `İlk Bilgi<br>
+Nordenskiöld Arktik Seferi Başlangıcı (1872)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+1872–1873 Arctic seferi, Prof. Adolf Erik Nordenskiöld liderliğinde 4 Temmuz 1872’de Göteborg, İsveç’ten Svalbard’a hareketle başlamıştır. Bu seferin amacı, Kuzey Kutbu’na ulaşarak orayı keşfetmekti ancak yoğun deniz buzları nedeniyle bu hedef gerçekleştirilememiştir. Bunun yerine ekip, Svalbard’da zor bir kış geçirmiş ve ardından Kuzeydoğu Toprakları (Nordaustlandet) boyunca yeni keşifler yapmıştır. Bu süreçte coğrafya, meteoroloji ve diğer bilimsel alanlara dair önemli veriler toplanmış ve bölgede ilk kapsamlı keşiflerden biri olarak kayda geçmiştir.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://www.thejubileeexpedition.com/expedition?utm_source" target="_blank">
+https://www.thejubileeexpedition.com/expedition?utm_source
+</a>`,
+
+5: `İlk Bilgi<br>
+Fred Roots Doğum Günü (1923)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+Fred Roots (doğum: 5 Temmuz 1923), Kanadalı bir jeolog ve kutup araştırmacısıdır. 1949–1952 yılları arasında Norveç-Britanya-İsveç Antarktika Seferi’nde baş jeolog olarak görev yapmış, uzun süreli kızaklı arazi çalışmalarıyla Antarktika jeolojisi ve iklim bilimine önemli katkılar sağlamıştır. Daha sonra Kanada’da kutup araştırma altyapısının gelişmesinde kilit rol oynamış ve Order of Canada gibi onursal ödüllerle ile onurlandırılmıştır.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://iasc.info/news/iasc-news/257-in-memoriam-fred-roots-polar-scientist-educator-and-one-of-iasc-s-founders" target="_blank">
+https://iasc.info/news/iasc-news/257-in-memoriam-fred-roots-polar-scientist-educator-and-one-of-iasc-s-founders
+</a>`,
+
+6: `İlk Bilgi<br>
+Robert Peary ve Matthew Henson’ın Kuzey Kutbu Seferi İçin Yola Çıkışı.<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+6 Temmuz 1908 tarihinde Robert E. Peary liderliğindeki Kuzey Kutbu seferi, Matthew Henson’un da yer aldığı ekip ile birlikte Roosevelt gemisiyle New York’tan yola çıkmıştır. Bu sefer, Peary’nin Kuzey Kutbu’na ulaşmayı hedefleyen son ve en iddialı keşif girişimi olup, Henson’un kızaklı ulaşım, navigasyon ve Inuit teknikleri konusundaki uzmanlığı kritik rol oynamıştır. Sefer, Arktik keşif tarihinde lojistik planlama ve insan dayanıklılığı açısından önemli bir aşamayı temsil etmiştir.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://www.nationalgeographic.com/adventure/article/the-legacy-of-arctic-explorer-matthew-henson" target="_blank">
+https://www.nationalgeographic.com/adventure/article/the-legacy-of-arctic-explorer-matthew-henson
+</a>`,
+
+7: `İlk Bilgi<br>
+İkinci Ulusal Arktik Bilimsel Araştırma Seferi (TASE-II) Başlangıcı (2022)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+7 Temmuz’da başlayan İkinci Ulusal Arktik Bilimsel Araştırma Seferi (TASE-II), TÜBİTAK koordinasyonunda Arktik Okyanusu’nda gerçekleştirilmiştir. Sefer kapsamında iklim değişikliği, deniz suyu kimyası, atmosferik koşullar ve deniz ekosistemleri gibi alanlarda çok disiplinli bilimsel çalışmalar yürütülmüştür. Toplanan veriler, Arktik bölgedeki çevresel değişimlerin anlaşılmasına ve Türkiye’nin kutup araştırmalarına bilimsel katkı sağlamayı amaçlamaktadır.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://tubitak.gov.tr/tr/haber/ikinci-ulusal-arktik-bilimsel-arastirma-seferi-tase-ii-basladi" target="_blank">
+https://tubitak.gov.tr/tr/haber/ikinci-ulusal-arktik-bilimsel-arastirma-seferi-tase-ii-basladi
+</a>`,
+
+8: `İlk Bilgi<br>
+Prag Deklarasyonu (2019)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+Antarktika Antlaşması’nın 60. yıl dönümünde devletlerarası olarak kabul edilen bu deklarasyon, 8 Temmuz 2019’da ilan edilmiştir. Deklarasyonda, Antarktika’nın barış ve bilim bölgesi olarak korunması taahhüt edilmiş, mevcut yönetim sisteminin güçlendirilmesi vurgulanmıştır.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://shorturl.at/KjQRS" target="_blank">
+https://shorturl.at/KjQRS
+</a>`,
+
+9: `İlk Bilgi<br>
+RV Polarstern Gemisi’nin İlk Buz İstasyonuna Ulaşması (2025)<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+9 Temmuz 2025’te, CONTRASTS Arktik Seferi kapsamında RV Polarstern araştırma gemisi ekipleri, ilk buz istasyonuna (floe 1) ulaşarak Arktik okyanusundaki buzu incelemeye başladı. Bu seferin amacı, deniz buzu erimesinin mekanizmalarını farklı buz rejimlerinde incelemekti ve bu istasyona varılması seferin bilimsel saha faaliyetlerinin önemli başlangıç noktalarından birini temsil ediyor.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://en.wikipedia.org/wiki/CONTRASTS_Expedition" target="_blank">
+https://en.wikipedia.org/wiki/CONTRASTS_Expedition
+</a>`,
+
+10: `İlk Bilgi<br>
+Arktika-2007 Rus Kutup Araştırma Seferi Başlangıcı<br><br>
+
+Ayrıntılı Devam Bilgisi<br><br>
+
+10 Temmuz 2007’de, Rusya tarafından yürütülen Arktika-2007 bilimsel kutup seferi, araştırma gemisi Akademik Fedorov’un St. Petersburg’dan Arktik Okyanusu’na doğru yola çıkmasıyla resmen başladı. Bu sefer, Uluslararası Kutup Yılı (2007–2008) kapsamında Arktik deniz tabanının jeolojik yapısını incelemeyi amaçlıyordu. Araştırmalar özellikle Lomonosov Sırtı gibi stratejik deniz altı oluşumlarına odaklandı. 10 Temmuz, Kuzey Kutbu’nda derin deniz araştırmalarına zemin hazırlayan bu büyük ölçekli bilimsel girişimin başlangıç tarihi olarak kayıtlara geçti.<br><br>
+
+KAYNAKÇA<br>
+<a href="https://ansiklopedi.tubitak.gov.tr/kutup/ansiklopedi/2007-rus-arastirma-yuksek-enlem-seferi-2007" target="_blank">
+https://ansiklopedi.tubitak.gov.tr/kutup/ansiklopedi/2007-rus-arastirma-yuksek-enlem-seferi-2007
+</a>`,
+
+11:"",12:"",13:"",14:"",15:"",16:"",17:"",18:"",19:"",20:"",
+21:"",22:"",23:"",24:"",25:"",26:"",27:"",28:"",29:"",30:"",31:""
 };
 
-function loadJuly() {
-  const daysDiv = document.getElementById("days");
-  daysDiv.innerHTML = "";
-
-  for (let i = 1; i <= 31; i++) {
-    const d = document.createElement("div");
-    d.className = "day";
-    d.innerText = i;
-
-    d.onclick = function () {
-      document.getElementById("content").innerHTML =
-        "<h2>" + i + " Temmuz</h2><p>" + julyData[i] + "</p>";
+function loadJuly(){
+  const daysDiv=document.getElementById("days");
+  daysDiv.innerHTML="";
+  for(let i=1;i<=31;i++){
+    const d=document.createElement("div");
+    d.className="day";
+    d.innerText=i;
+    d.onclick=function(){
+      document.getElementById("content").innerHTML=
+      "<h2>"+i+" Temmuz</h2>"+(julyData[i]||"Henüz girilmedi.");
     };
-
     daysDiv.appendChild(d);
   }
 }
