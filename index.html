@@ -1,27 +1,127 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Kutup Maarif Takvimi</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Kutup Maarif Takvimi - Temmuz</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  display: flex;
+  height: 100vh;
+}
+
+#months {
+  width: 200px;
+  background: #0b3c5d;
+  color: white;
+  padding: 20px;
+}
+
+#months div {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #1d5b82;
+}
+
+#months div:hover {
+  background: #1d5b82;
+}
+
+#days {
+  width: 300px;
+  background: #f0f0f0;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.day {
+  background: white;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.day:hover {
+  background: #cce7ff;
+}
+
+#content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Kutup Maarif Takvimi</h1>
-  <p>Her gün kutuplara ait yeni bir macera</p>
-</header>
+<div id="months">
+  <div onclick="loadJuly()">Temmuz</div>
+</div>
 
-<main>
-  <div id="calendar"></div>
+<div id="days"></div>
 
-  <section id="content">
-    <h2 id="dayTitle">Bir gün seçin</h2>
-    <p id="dayText">Takvimden bir gün seçtiğinizde bilgi burada görünecek.</p>
-  </section>
-</main>
+<div id="content">
+  <h2>Gün seç</h2>
+  <p>Soldan Temmuz'u seç, sonra bir güne tıkla.</p>
+</div>
 
-<script src="script.js"></script>
+<script>
+const julyData = {
+  1: "1 Temmuz içeriği buraya",
+  2: "2 Temmuz içeriği buraya",
+  3: "3 Temmuz içeriği buraya",
+  4: "4 Temmuz içeriği buraya",
+  5: "5 Temmuz içeriği buraya",
+  6: "6 Temmuz içeriği buraya",
+  7: "7 Temmuz içeriği buraya",
+  8: "8 Temmuz içeriği buraya",
+  9: "9 Temmuz içeriği buraya",
+  10: "10 Temmuz içeriği buraya",
+  11: "11 Temmuz içeriği buraya",
+  12: "12 Temmuz içeriği buraya",
+  13: "13 Temmuz içeriği buraya",
+  14: "14 Temmuz içeriği buraya",
+  15: "15 Temmuz içeriği buraya",
+  16: "16 Temmuz içeriği buraya",
+  17: "17 Temmuz içeriği buraya",
+  18: "18 Temmuz içeriği buraya",
+  19: "19 Temmuz içeriği buraya",
+  20: "20 Temmuz içeriği buraya",
+  21: "21 Temmuz içeriği buraya",
+  22: "22 Temmuz içeriği buraya",
+  23: "23 Temmuz içeriği buraya",
+  24: "24 Temmuz içeriği buraya",
+  25: "25 Temmuz içeriği buraya",
+  26: "26 Temmuz içeriği buraya",
+  27: "27 Temmuz içeriği buraya",
+  28: "28 Temmuz içeriği buraya",
+  29: "29 Temmuz içeriği buraya",
+  30: "30 Temmuz içeriği buraya",
+  31: "31 Temmuz içeriği buraya"
+};
+
+function loadJuly() {
+  const daysDiv = document.getElementById("days");
+  daysDiv.innerHTML = "";
+
+  for (let i = 1; i <= 31; i++) {
+    const d = document.createElement("div");
+    d.className = "day";
+    d.innerText = i;
+
+    d.onclick = function () {
+      document.getElementById("content").innerHTML =
+        "<h2>" + i + " Temmuz</h2><p>" + julyData[i] + "</p>";
+    };
+
+    daysDiv.appendChild(d);
+  }
+}
+</script>
+
 </body>
 </html>
-
