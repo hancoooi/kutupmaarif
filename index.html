@@ -2,122 +2,31 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>KUTUP MAARİF TAKVİMİ</title>
+<title>Kutup Maarif Takvimi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f5f6fa;
-}
+body{margin:0;font-family:Arial;background:#f4f6f8}
+header{background:#6db7ff;color:#fff;text-align:center;padding:30px}
+header h1{margin:0;font-size:32px;letter-spacing:2px}
+header p{margin:5px 0 0}
 
-header {
-  background:#6db7ff;
-  color:white;
-  text-align:center;
-  padding:25px 10px;
-}
+.months{text-align:center;margin:15px}
+.months button{margin:5px;padding:8px 14px;border:none;border-radius:4px;background:#6db7ff;color:white;cursor:pointer}
+.months button:hover{background:#4fa3ff}
 
-header h1 {
-  margin:0;
-  font-size:32px;
-  letter-spacing:2px;
-}
+.main{display:flex;max-width:1200px;margin:20px auto;gap:20px}
+.left{flex:3;background:white;border-radius:8px;overflow:hidden}
+.right{flex:2;background:white;border-radius:8px;padding:10px;max-height:80vh;overflow-y:auto}
 
-header p {
-  margin-top:8px;
-  font-size:16px;
-}
+.hero img{width:100%;height:350px;object-fit:cover}
+.content{padding:20px}
 
-.container {
-  display:flex;
-  max-width:1200px;
-  margin:20px auto;
-  gap:20px;
-}
-
-.left {
-  flex:3;
-  background:white;
-  border-radius:8px;
-  overflow:hidden;
-}
-
-.left img {
-  width:100%;
-  height:350px;
-  object-fit:cover;
-}
-
-.content {
-  padding:20px;
-}
-
-.content h2 {
-  margin-top:0;
-}
-
-.right {
-  flex:1.3;
-  background:white;
-  border-radius:8px;
-  padding:10px;
-  overflow-y:auto;
-  max-height:600px;
-}
-
-.day {
-  display:flex;
-  align-items:center;
-  margin-bottom:10px;
-  cursor:pointer;
-}
-
-.circle {
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:#e1e1e1;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin-right:10px;
-  font-size:12px;
-}
-
-.box {
-  background:white;
-  border:1px solid #ddd;
-  padding:10px;
-  flex:1;
-  border-radius:6px;
-}
-
-.day:hover .box {
-  background:#f0f8ff;
-}
-
-.monthbar {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:15px;
-}
-
-.monthbar button {
-  padding:8px 12px;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
-  background:#ddd;
-}
-
-.monthbar button:hover {
-  background:#6db7ff;
-  color:white;
-}
+.day{display:flex;align-items:center;margin-bottom:10px;cursor:pointer}
+.circle{width:36px;height:36px;border-radius:50%;background:#6db7ff;color:white;
+display:flex;align-items:center;justify-content:center;margin-right:10px}
+.card{background:#f9f9f9;padding:10px;border-radius:6px;flex:1}
+.card:hover{background:#eaf2ff}
 </style>
 </head>
 
@@ -128,18 +37,29 @@ header p {
   <p>Bir Gün Bir Kutup Olayı</p>
 </header>
 
-<div class="monthbar">
-  <button onclick="loadMonth('temmuz')">TEMMUZ</button>
-  <button onclick="loadMonth('agustos')">AĞUSTOS</button>
-  <button onclick="loadMonth('eylul')">EYLÜL</button>
+<div class="months">
+  <button onclick="loadMonth('ocak')">Ocak</button>
+  <button onclick="loadMonth('subat')">Şubat</button>
+  <button onclick="loadMonth('mart')">Mart</button>
+  <button onclick="loadMonth('nisan')">Nisan</button>
+  <button onclick="loadMonth('mayis')">Mayıs</button>
+  <button onclick="loadMonth('haziran')">Haziran</button>
+  <button onclick="loadMonth('temmuz')">Temmuz</button>
+  <button onclick="loadMonth('agustos')">Ağustos</button>
+  <button onclick="loadMonth('eylul')">Eylül</button>
+  <button onclick="loadMonth('ekim')">Ekim</button>
+  <button onclick="loadMonth('kasim')">Kasım</button>
+  <button onclick="loadMonth('aralik')">Aralık</button>
 </div>
 
-<div class="container">
+<div class="main">
   <div class="left">
-    <img id="mainImage" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Arctic_ice.jpg">
-    <div class="content">
-      <h2 id="title">Bir gün seç</h2>
-      <p id="text">Sağdan bir gün seçerek içerikleri görebilirsin.</p>
+    <div class="hero">
+      <img id="mainImage" src="https://upload.wikimedia.org/wikipedia/commons/4/48/Arctic_ice.jpg">
+    </div>
+    <div class="content" id="detail">
+      <h2>Bir gün seçiniz</h2>
+      <p>Sağdan bir gün seçerek bilgileri görebilirsiniz.</p>
     </div>
   </div>
 
@@ -147,43 +67,42 @@ header p {
 </div>
 
 <script>
-const data = {
-  temmuz: [
-    {day:1,title:"TEMMUZ 1",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/8/8b/Arctic_ice.jpg"},
-    {day:2,title:"TEMMUZ 2",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/5/5f/Polar_bear.jpg"},
-    {day:3,title:"TEMMUZ 3",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/0/09/Aurora.jpg"},
-    {day:4,title:"TEMMUZ 4",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/3/3f/Iceberg.jpg"},
-    {day:5,title:"TEMMUZ 5",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Glacier.jpg"},
-    {day:6,title:"TEMMUZ 6",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/f/f3/Arctic_ocean.jpg"},
-    {day:7,title:"TEMMUZ 7",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/7/79/Polar_night.jpg"},
-    {day:8,title:"TEMMUZ 8",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/9/97/Snowy_mountains.jpg"},
-    {day:9,title:"TEMMUZ 9",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/4/47/Sea_ice.jpg"},
-    {day:10,title:"TEMMUZ 10",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Arctic_sun.jpg"}
-  ],
-  agustos: [],
-  eylul: []
+const fullMonths = ["ocak","subat","mart","nisan","mayis","haziran","temmuz","agustos","eylul","ekim","kasim","aralik"];
+
+const temmuz = {
+1:`MacGregor Arktik Seferinin Başlangıcı (1937)
+... (buraya Word’daki TAM metni yapıştır)`,
+2:`CONTRASTS Kutup Araştırma Seferi’nin Başlangıcı (2025)
+...`,
+3:`ABD’nin Antarktika Antlaşması Çevre Protokolü`,
+4:`Nordenskiöld Arktik Seferi`,
+5:`Fred Roots`,
+6:`Robert Peary`,
+7:`TASE-II`,
+8:`Prag Deklarasyonu`,
+9:`RV Polarstern`,
+10:`Arktika-2007`
 };
 
 function loadMonth(month){
-  const daysDiv = document.getElementById("days");
-  daysDiv.innerHTML = "";
-  data[month].forEach(d=>{
-    const div = document.createElement("div");
-    div.className="day";
-    div.innerHTML=`
-      <div class="circle">
-        <b>${d.day}</b>
-        <small>${month.toUpperCase()}</small>
-      </div>
-      <div class="box">${d.title}</div>
-    `;
-    div.onclick=()=>{
-      document.getElementById("title").innerText=d.title;
-      document.getElementById("text").innerText=d.text;
-      document.getElementById("mainImage").src=d.img;
-    };
-    daysDiv.appendChild(div);
-  });
+  const days=document.getElementById("days");
+  days.innerHTML="";
+  for(let i=1;i<=30;i++){
+    days.innerHTML+=`
+      <div class="day" onclick="showDay('${month}',${i})">
+        <div class="circle">${i}</div>
+        <div class="card">${month.toUpperCase()} ${i}</div>
+      </div>`;
+  }
+}
+
+function showDay(month,day){
+  const detail=document.getElementById("detail");
+  if(month==="temmuz" && temmuz[day]){
+    detail.innerText = temmuz[day];
+  } else {
+    detail.innerHTML = "<h2>Henüz içerik yok</h2><p>Bu gün daha sonra doldurulacaktır.</p>";
+  }
 }
 
 loadMonth("temmuz");
