@@ -3,65 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Kutup Maarif Takvimi</title>
-<style>
-body { font-family: Arial, sans-serif; margin:0; padding:0; }
-header {
-  background:#0056b3;
-  color:white;
-  padding:15px;
-  text-align:center;
-}
-header nav a {
-  color:white; text-decoration:none; margin:0 15px;
-  font-weight:bold;
-}
-
-.main-title {
-  padding:20px;
-  text-align:center;
-  font-size:28px;
-  font-weight:bold;
-}
-
-.content {
-  max-width:800px;
-  margin:auto;
-  padding:20px;
-  line-height:1.6;
-  background:#f9f9f9;
-}
-hr { border:none; border-top:1px solid #ddd; margin:40px 0; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="#ocak">Ocak</a>
-    <a href="#subat">Şubat</a>
-    <a href="#mart">Mart</a>
-    <a href="#temmuz">Temmuz</a>
-    <a href="#aralik">Aralık</a>
-  </nav>
-</header>
+<div class="calendar-container">
 
-<div class="main-title">Temmuz Ayı – Kutup Maarif Takvimi</div>
+  <!-- SOL TARAF -->
+  <div class="left">
+    <img id="mainImage" src="img/temmuz1.jpg" alt="">
+    <div class="info">
+      <h2 id="title">1 Temmuz</h2>
+      <p id="date">Kutup Maarif Takvimi</p>
+      <p id="content">İçerik buraya gelecek</p>
+    </div>
+  </div>
 
-<div class="content">
+  <!-- SAĞ TARAF -->
+  <div class="right">
+    <div id="dayList"></div>
 
-<h3 id="temmuz1">1 Temmuz</h3>
-<p>MacGregor Arktik Seferinin Başlangıcı (1937)...</p>
-<p>KAYNAKÇA: <a href="https://kids.kiddle.co/MacGregor_Arctic_Expedition" target="_blank">https://kids.kiddle.co/MacGregor_Arctic_Expedition</a></p>
-<hr>
-
-<h3 id="temmuz2">2 Temmuz</h3>
-<p>CONTRASTS Kutup Araştırma Seferi’nin Başlangıcı (2025)...</p>
-<p>KAYNAKÇA: <a href="https://www.awi.de/.../translate-to-english-contrasts.html" target="_blank">https://www.awi.de/.../translate-to-english-contrasts.html</a></p>
-<hr>
-
-<!-- Devamı aynı şekilde 3–10 -->
+    <div class="monthNav">
+      <button onclick="prevMonth()">◀</button>
+      <span id="monthName">TEMMUZ</span>
+      <button onclick="nextMonth()">▶</button>
+    </div>
+  </div>
 
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
