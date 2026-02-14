@@ -1,5 +1,5 @@
-TEMMUZ: {
-  1: {
+const temmuz = {
+1: {
     title: "MacGregor Arktik Seferinin Başlangıcı (1937)",
     detail: "1 Temmuz 1937’de MacGregor Arktik Seferi başladı. Sefer, Kanada’nın Ellesmere Adası’ndaki Fort Conger bölgesine ulaşarak Kuzey Kutbu çevresinde meteoroloji, jeomanyetizma ve kutup ışıkları üzerine bilimsel gözlemler yapmak amacıyla düzenlendi. Araştırma gemisi Donald II ile yürütülen çalışmalar, zorlu kış koşulları da dâhil olmak üzere 1938 sonbaharına kadar devam etti. Bu sefer, Kuzey Kutbu’nda modern ve sistematik bilimsel ölçümlerin uygulanması açısından önemlidir. Özellikle hava durumu, manyetik alan ve aurora gözlemleri, Arktik bölgenin fiziksel koşullarının daha iyi anlaşılmasına katkı sağlamış ve sonraki kutup araştırmalarına bilimsel altyapı oluşturmuştur.",
     source: "https://kids.kiddle.co/MacGregor_Arctic_Expedition"
@@ -167,3 +167,22 @@ TEMMUZ: {
     source: "https://tubitak.gov.tr/tr/haber/besinci-ulusal-arktik-bilimsel-arastirma-seferi-tase-v-sona-erdi"
   }
 }
+
+function loadMonth(m){
+  const days=document.getElementById("days");
+  days.innerHTML="";
+  for(let i=1;i<=30;i++){
+    days.innerHTML+=`<div class="day" onclick="showDay('${m}',${i})"><div class="circle">${i}</div><div class="card">${m.toUpperCase()} ${i}</div></div>`;
+  }
+}
+
+function showDay(m,d){
+  const box=document.getElementById("detail");
+  if(m==="temmuz" && temmuz[d]){
+    box.innerHTML=`<h2>${temmuz[d].t}</h2><p>${temmuz[d].d}</p><p><b>Kaynak:</b> <a href="${temmuz[d].s}" target="_blank">${temmuz[d].s}</a></p>`;
+  } else {
+    box.innerHTML="<h2>Henüz içerik yok</h2><p>Bu gün daha sonra doldurulacaktır.</p>";
+  }
+}
+
+loadMonth("temmuz");
