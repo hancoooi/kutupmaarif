@@ -1,1630 +1,193 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>KUTUP MAARİF TAKVİMİ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <head>
-
-        <meta charset="utf-8">
-       
-		<meta name="keywords" content="Afyonkarahisar, Afyon tarihi, Afyon maarif takvimi, Afyon destanları, Afyon manileri, Afyon yemekleri, Afyon kültürü, Afyon kültürel değerleri">
-
-		<meta name="robots" content="index, follow">
-		<meta name="author" content="Afyonkarahisar Maarif Takvimi">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="canonical" href="https://www.afyonkarahisarmaariftakvimi.com/">
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Afyonkarahisar Maarif Takvimi</title>
-        <link rel="stylesheet" href="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/css/chat.css" type="text/css" />
-        <link rel="shortcut icon" href="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/images/favicon.ico">
-        <!--Plugin CSS-->
-        <link href="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/css/plugins.min.css" rel="stylesheet">
-        <!--main Css-->
-        <link href="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/css/main.min.css" rel="stylesheet"> 
-        <!-- custom css -->
-        <link href="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/css/custom.css" rel="stylesheet">    
-        <!-- crop baslangıç -->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        
-
-        <!-- crop dosyaları buradan başşlıyor -->
-        <link rel="stylesheet" href="https://www.afyonkarahisarmaariftakvimi.com/include/crop/jquery.Jcrop.min.css" type="text/css" />
-        <!-- <link href="http://edge1u.tapmodo.com/deepliq/jcrop_demos.css" rel="stylesheet" type="text/css" /> -->
-        <!-- <script src="base url jquery.Jcrop.js"></script> -->
-        <script src="https://www.afyonkarahisarmaariftakvimi.com/include/crop/jquery.Jcrop.min.js"></script>
-        <link rel="stylesheet" href="https://www.afyonkarahisarmaariftakvimi.com/include/crop/jquery.Jcrop.css" type="text/css" />   
-        <!-- crop dosyaları burada bitiyor -->
-        
-        
-        <script src="https://www.afyonkarahisarmaariftakvimi.com//assets/js/ckeditor/ckeditor.js"></script>
-      
-        <!-- <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
-            
-<!-- include summernote css/js 
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js"></script> 
- include summernote css/js -->
-        <script>
-        $(document).ready(function(){
-            
-          $('[data-toggle="popover"]').popover();
-
-        });
-        </script>          
-        <script language="Javascript">
-
-        var jQueryCalis = $.noConflict( true );
-            jQueryCalis(function(){
-
-                jQueryCalis('#cropbox').Jcrop({
-                    onChange: showPreview,
-                    onSelect: showPreview,
-                    aspectRatio: 1,
-                    bgColor:     'black',
-                    bgOpacity:   .4,
-                    minSize: [101, 102],
-
-                    onSelect: updateCoords
-                });
-
-            });
-            //
-            jQueryCalis(function(){
-
-                jQueryCalis('#cropboxKapak').Jcrop({
-                    onChange: showPreviewKapak,
-                    onSelect: showPreviewKapak,
-                    aspectRatio: 0,
-                    bgColor:     'black',
-                    bgOpacity:   .4,
-
-                    onSelect: updateCoordsKapak
-                });
-
-            });
-            jQueryCalis(function(){
-
-                jQueryCalis('#cropboxYazi').Jcrop({
-                    onChange: showPreviewYazi,
-                    onSelect: showPreviewYazi,
-                    aspectRatio: 0,
-                    bgColor:     'black',
-                    bgOpacity:   .4,
-
-                    onSelect: updateCoordsYazi
-                });
-
-            });            
-            //
-          
-            function showPreview(coords)
-            {
-                var rx = 100 / coords.w;
-                var ry = 100 / coords.h;
-
-                $('#preview').css({
-                    width: Math.round(rx * 500) + 'px',
-                    height: Math.round(ry * 370) + 'px',
-                    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-                    marginTop: '-' + Math.round(ry * coords.y) + 'px'
-                });
-            }
-            function updateCoords(c)
-            {
-                jQueryCalis('#x').val(c.x);
-                jQueryCalis('#y').val(c.y);
-                jQueryCalis('#w').val(c.w);
-                jQueryCalis('#h').val(c.h);
-                var Yukseklik = $(".jcrop-holder").css('height');
-                var Genislik = $(".jcrop-holder").css('width');
-                jQueryCalis('#ResimYukseklik').val(Yukseklik);
-                jQueryCalis('#ResimGenislik').val(Genislik);
-                //resim için
-
-            };
-
-            function checkCoords()
-            {
-                if (parseInt(jQueryCalis('#w').val())) return true;
-                alert('Kırpma işlemini yapmadınız.');
-                return false;
-            };
-            //
-            function showPreviewKapak(coords)
-            {
-                var rx = 100 / coords.w;
-                var ry = 100 / coords.h;
-
-                $('#preview').css({
-                    width: Math.round(rx * 500) + 'px',
-                    height: Math.round(ry * 370) + 'px',
-                    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-                    marginTop: '-' + Math.round(ry * coords.y) + 'px'
-                });
-            }
-            function updateCoordsKapak(c)
-            {
-                jQueryCalis('#x').val(c.x);
-                jQueryCalis('#y').val(c.y);
-                jQueryCalis('#w').val(c.w);
-                jQueryCalis('#h').val(c.h);
-                var Yukseklik = $(".jcrop-holder").css('height');
-                var Genislik = $(".jcrop-holder").css('width');
-                jQueryCalis('#ResimYukseklik').val(Yukseklik);
-                jQueryCalis('#ResimGenislik').val(Genislik);
-
-            };
-
-            function checkCoordsKapak()
-            {
-                if (parseInt(jQueryCalis('#w').val())) return true;
-                alert('Kırpma işlemini yapmadınız.');
-                return false;
-            };
-//
-            function showPreviewYazi(coords)
-            {
-                var rx = 100 / coords.w;
-                var ry = 100 / coords.h;
-
-                $('#preview').css({
-                    width: Math.round(rx * 600) + 'px',
-                    height: Math.round(ry * 400) + 'px',
-                    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
-                    marginTop: '-' + Math.round(ry * coords.y) + 'px'
-                });
-            }
-            function updateCoordsYazi(c)
-            {
-                jQueryCalis('#x').val(c.x);
-                jQueryCalis('#y').val(c.y);
-                jQueryCalis('#w').val(c.w);
-                jQueryCalis('#h').val(c.h);
-                var Yukseklik = $(".jcrop-holder").css('height');
-                var Genislik = $(".jcrop-holder").css('width');
-                jQueryCalis('#ResimYukseklik').val(Yukseklik);
-                jQueryCalis('#ResimGenislik').val(Genislik);                
-            };
-
-            function checkCoordsYazi()
-            {
-                if (parseInt(jQueryCalis('#w').val())) return true;
-                alert('Kırpma işlemini yapmadınız.');
-                return false;
-            };
-        </script>        
-    </head>
-
-    <body>
-        <!-- header -->
-        <div id="header-fix" class="header fixed-top">
-            <nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light py-lg-0 py-4">
-               
-                <a class="navbar-brand mr-4 mr-md-5" id="logoUstuTiklama" href="https://www.afyonkarahisarmaariftakvimi.com/"><img src="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/images/logo-v1.png" alt=""></a>
-                <div id="dl-menu" class="dl-menuwrapper d-block d-lg-none float-right">
-                    <button>Menü</button>
-                    <ul class="dl-menu">
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/" data-toggle="dropdown" aria-expanded="false">Ana Sayfa</a>
-                            <!-- <ul class="dl-submenu">
-                                <li class="dl-back"><a href="#">back</a></li>
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index-2.html">Home 2</a></li>
-                            </ul> -->
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/turkuler.html" data-toggle="dropdown" aria-expanded="false">Türküler</a>
-                           
-                        </li> 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/bilmeceler.html" data-toggle="dropdown" aria-expanded="false">Bilmeceler</a>
-                           
-                        </li>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/destanlar.html" data-toggle="dropdown" aria-expanded="false">Destanlar</a>
-                           
-                        </li>    
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/deyimveatasozleri.html" data-toggle="dropdown" aria-expanded="false">Deyim ve Atasözleri</a>
-                           
-                        </li>  
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/yemekler.html" data-toggle="dropdown" aria-expanded="false">Yöresel Yemekler</a>
-                           
-                        </li> 
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/maniler.html" data-toggle="dropdown" aria-expanded="false">Maniler</a>
-                           
-                        </li>                                                                                                                            
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/kultureldegerler.html" data-toggle="dropdown" aria-expanded="false">Kültürel Değerler</a>
-                           
-                        </li>  
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/onemlikisiler.html" data-toggle="dropdown" aria-expanded="false">Önemli Kişiler</a>
-                           
-                        </li>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/cocukisimleri.html" data-toggle="dropdown" aria-expanded="false">Çocuk İsimleri</a>
-                           
-                        </li>       
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/benimsehrimbenimkahramanim.html" data-toggle="dropdown" aria-expanded="false">Benim Şehrim Benim Kahramanım</a>
-                           
-                        </li>                                                                
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/hakkimizda.html" data-toggle="dropdown" aria-expanded="false">Hakkımızda</a>
-                           
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/kaynakca.html" data-toggle="dropdown" aria-expanded="false">Kaynakça</a>
-                            
-                        </li>
-                                            
-                        
-                    </ul>
-                </div>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown"> <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/" aria-expanded="false">Ana Sayfa</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/turkuler.html"  aria-expanded="false">Türküler</a>
-                           
-                        </li> 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/bilmeceler.html" aria-expanded="false">Bilmeceler</a>
-                           
-                        </li>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/destanlar.html"  aria-expanded="false">Destanlar</a>
-                           
-                        </li>    
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/deyimveatasozleri.html"  aria-expanded="false">Deyim ve Atasözleri</a>
-                           
-                        </li>  
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/yemekler.html"  aria-expanded="false">Yöresel Yemekler</a>
-                           
-                        </li> 
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/maniler.html"  aria-expanded="false">Maniler</a>
-                           
-                        </li>                                                                                                                            
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/kultureldegerler.html"  aria-expanded="false">Kültürel Değerler</a>
-                           
-                        </li>  
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/onemlikisiler.html"  aria-expanded="false">Önemli Kişiler</a>
-                           
-                        </li>
-                       <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/cocukisimleri.html"  aria-expanded="false">Çocuk İsimleri</a>
-                           
-                        </li>    
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="https://www.afyonkarahisarmaariftakvimi.com/benimsehrimbenimkahramanim.html"  aria-expanded="false">Benim Şehrim Benim Kahramanım</a>
-                           
-                        </li>                                                                                                                       
-                    </ul>
-                    
-            </nav>
-        </div>
-        <!--End header --><style type="text/css">
-    
-/* Ana Çerçeve Stilleri */
-.timeline-container {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 20px auto;
-    padding-left: 10px;
-    /* Dikey çizgi için soldan boşluk bırakıyoruz */
-    position: relative;
-    /* ***** KAYDIRMA ÖZELLİĞİ BURADA EKLENDİ ***** */
-    max-height: 500px; /* İstediğiniz maksimum yüksekliği ayarlayın */
-    overflow-y: auto;  /* İçerik bu yüksekliği aşınca dikey kaydırma çubuğu çıkar */
-    padding-right: 10px; /* Kaydırma çubuğunun içerikle çakışmaması için sağdan boşluk */
-    /* ******************************************* */
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5f6fa;
 }
 
-/* Dikey Çizgi (Zaman Çizelgesi Hattı) */
-.timeline-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 45px; /* Sol taraftaki tarih alanına hizalama */
-    height: 100%;
-    width: 2px;
-    background-color: #ddd; /* Açık gri çizgi */
+header {
+  background:#6db7ff;
+  color:white;
+  text-align:center;
+  padding:25px 10px;
 }
 
-/* Her Bir Olayın Kapsayıcısı */
-.timeline-item {
-    display: flex;
-    align-items: flex-start; /* İçerik yukarıdan başlasın */
-    margin-bottom: 20px;
-    position: relative;
-    padding-left: 60px; /* İçeriği tarih alanından ayır */
+header h1 {
+  margin:0;
+  font-size:32px;
+  letter-spacing:2px;
 }
 
-/* Sol Taraftaki Gün ve Tarih Alanı */
-.timeline-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    left: 0;
-    width: 60px;
-    text-align: center;
-    line-height: 1.2;
+header p {
+  margin-top:8px;
+  font-size:16px;
 }
 
-/* Gün Kısaltması (Pz, Pt, Sa, Ça, vb.) */
-.day-abbr {
-    background-color: #eee; /* Arka plan rengi */
-    color: #333;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; /* Daire şekli */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 12px;
-    border: 1px solid #ccc;
-    z-index: 1; /* Çizginin üstünde görünmesi için */
+.container {
+  display:flex;
+  max-width:1200px;
+  margin:20px auto;
+  gap:20px;
 }
 
-/* Tarih Bilgisi (16 Kasım, vb.) */
-.date-info {
-    font-size: 12px;
-    color: #777;
-    margin-top: 4px;
+.left {
+  flex:3;
+  background:white;
+  border-radius:8px;
+  overflow:hidden;
 }
 
-/* Görseldeki kırmızı renkli gün için özel sınıf */
-.day-abbr.kirmizi {
-    background-color: #fce4e4; /* Açık kırmızı */
-    color: #cc0000; /* Koyu kırmızı yazı */
-    border-color: #f0c3c3;
+.left img {
+  width:100%;
+  height:350px;
+  object-fit:cover;
 }
 
-/* Olay İçeriği (Sağ Taraftaki Kart) */
-.timeline-content {
-    background-color: white;
-    padding: 15px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-    flex-grow: 1; /* Kalan tüm alanı kapla */
-    margin-left: 15px; /* Tarih alanı ile arasına biraz boşluk */
+.content {
+  padding:20px;
 }
 
-.timeline-content p {
-    margin: 0;
-    font-size: 14px;
-    color: #333;
+.content h2 {
+  margin-top:0;
 }
-.month-navigation{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: system-ui, Arial, sans-serif;
-    margin: 24px;
+
+.right {
+  flex:1.3;
+  background:white;
+  border-radius:8px;
+  padding:10px;
+  overflow-y:auto;
+  max-height:600px;
+}
+
+.day {
+  display:flex;
+  align-items:center;
+  margin-bottom:10px;
+  cursor:pointer;
+}
+
+.circle {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#e1e1e1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-right:10px;
+  font-size:12px;
+}
+
+.box {
+  background:white;
+  border:1px solid #ddd;
+  padding:10px;
+  flex:1;
+  border-radius:6px;
+}
+
+.day:hover .box {
+  background:#f0f8ff;
+}
+
+.monthbar {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:15px;
+}
+
+.monthbar button {
+  padding:8px 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  background:#ddd;
+}
+
+.monthbar button:hover {
+  background:#6db7ff;
+  color:white;
 }
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<section class="lis-bg-light pb-5">
-            <div class="container pt-5">
-                <div class="row">
-                    <div class="col-12 col-sm-6 wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;">
-                        <div class="page-title">
-                            <h2>Afyonkarahisar Maarif Takvimi</h2>
-                            
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 text-left text-sm-right wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                        <ol class="breadcrumb mb-0 pl-0 bg-transparent">
-                            <li class="breadcrumb-item d-inline-block float-none"><a href="https://www.afyonkarahisarmaariftakvimi.com/hakkimizda.html/" class="lis-light">Hakkımızda</a></li>
-                            <li class="breadcrumb-item d-inline-block float-none"><a href="https://www.afyonkarahisarmaariftakvimi.com/kaynakca.html/" class="lis-light">Kaynakça</a></li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </section>
-<section style="background-image: url(https://www.afyonkarahisarmaariftakvimi.com/uploads/gruplar/arkaplan.png)">
-            <div class="container" style="background-color: white; padding-top: 20px;">
-                <div class="row">
-                    <div class="col-12 col-lg-7 mb-5 mb-lg-0">
-                        <div class="mb-4 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                            <div class="card border-0 lis-relative">
-                                <a href="#">
-                                    <div class="lis-grediant grediant-tb-light2 lis-relative rounded-top post-image"> <img src="https://www.afyonkarahisarmaariftakvimi.com/uploads/gruplar/c32237af895715021dd4ca499efefba9.jpg" alt="" class="img-fluid rounded-top w-100"> </div>
-                                </a>
-                            </div>
-                            <div class="card border-top-0 lis-brd-light lis-bg-light"><!--  01 Ocak 1970 -->
-                                <div class="card-body p-4"> <a href="#" class="lis-dark"><h5>Afyon Jeotermal Isıtma Merkezi Kuruldu</h5></a>
-                                    <ul class="list-inline comment-info">
-                                        
-                                        <li class="list-inline-item lis-relative mr-4"><a href="#" class="lis-light"><i class="fa fa-calendar pr-1 lis-dark"></i>14 Şubat 1994</a></li>
-                                        
-                                    </ul>
-                                    <p>Kısa adı AFJET olan Afyon Jeotermal Elektrik Üretim
-Tesisleri Turizm Sanayi ve Ticaret A.Ş; jeotermal su kaynaklarıyla bölgesel
-ısıtma tesisleri kurmak, dönüş suları ile seralara su temin etmek amacıyla
-14.02.1994 tarihinde kurulmuş olup 1996 yılında çalışmalarına başlamıştır.<br>
-Güncel sermayesi 50 Milyon TL olan şirketimizin ortakları; Afyonkarahisar İl
-Özel İdaresi (Y,41),<br>
-Afyonkarahisar Belediyesi (&,67),<br>
-Afyonkarahisar Ticaret ve Sanayi Odası (%6,03),<br>
-Yüntaş A.Ş (%7,17),<br>
-Afyon Eğitim Vakfı (0,50),<br>
-Afyonkarahisar Ticaret Borsası (0,20),<br>
-Afyonkarahisar Esnaf Ve Sanatkârlar Odaları Birliği (0,02)’dir. Şirketimiz 8
-yönetim kurulu üyesinden oluşmaktadır.</p>
+</head>
 
+<body>
 
+<header>
+  <h1>KUTUP MAARİF TAKVİMİ</h1>
+  <p>Bir Gün Bir Kutup Olayı</p>
+</header>
 
+<div class="monthbar">
+  <button onclick="loadMonth('temmuz')">TEMMUZ</button>
+  <button onclick="loadMonth('agustos')">AĞUSTOS</button>
+  <button onclick="loadMonth('eylul')">EYLÜL</button>
+</div>
 
+<div class="container">
+  <div class="left">
+    <img id="mainImage" src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Arctic_ice.jpg">
+    <div class="content">
+      <h2 id="title">Bir gün seç</h2>
+      <p id="text">Sağdan bir gün seçerek içerikleri görebilirsin.</p>
+    </div>
+  </div>
 
-<br><p></p>                                    
-                                   
-                                </div>
-                            </div>
-                        </div>
+  <div class="right" id="days"></div>
+</div>
 
-                        </div>
-                    <div class="col-12 col-lg-5">
-                        <div class="lis-sidebar-right"  style="margin-top: -20px;">
-                           
-                            <!-- css deneme -->
-                                <div class="calendar-wrapper">
-                                    
+<script>
+const data = {
+  temmuz: [
+    {day:1,title:"TEMMUZ 1",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/8/8b/Arctic_ice.jpg"},
+    {day:2,title:"TEMMUZ 2",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/5/5f/Polar_bear.jpg"},
+    {day:3,title:"TEMMUZ 3",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/0/09/Aurora.jpg"},
+    {day:4,title:"TEMMUZ 4",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/3/3f/Iceberg.jpg"},
+    {day:5,title:"TEMMUZ 5",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Glacier.jpg"},
+    {day:6,title:"TEMMUZ 6",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/f/f3/Arctic_ocean.jpg"},
+    {day:7,title:"TEMMUZ 7",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/7/79/Polar_night.jpg"},
+    {day:8,title:"TEMMUZ 8",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/9/97/Snowy_mountains.jpg"},
+    {day:9,title:"TEMMUZ 9",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/4/47/Sea_ice.jpg"},
+    {day:10,title:"TEMMUZ 10",text:"BURAYA WORD'DAKİ TAM METNİ YAPIŞTIR",img:"https://upload.wikimedia.org/wikipedia/commons/1/1e/Arctic_sun.jpg"}
+  ],
+  agustos: [],
+  eylul: []
+};
 
-                                    <div id="timeline-container" class="timeline-container">
-                                        <div class="timeline-item">
-                                            <p></p>
-                                        </div>
-                                    </div>
+function loadMonth(month){
+  const daysDiv = document.getElementById("days");
+  daysDiv.innerHTML = "";
+  data[month].forEach(d=>{
+    const div = document.createElement("div");
+    div.className="day";
+    div.innerHTML=`
+      <div class="circle">
+        <b>${d.day}</b>
+        <small>${month.toUpperCase()}</small>
+      </div>
+      <div class="box">${d.title}</div>
+    `;
+    div.onclick=()=>{
+      document.getElementById("title").innerText=d.title;
+      document.getElementById("text").innerText=d.text;
+      document.getElementById("mainImage").src=d.img;
+    };
+    daysDiv.appendChild(div);
+  });
+}
 
-                                    <div class="month-navigation" style="text-align: left;">
-                                        <button id="prev-month" aria-label="Previous Month" title="Önceki Ay">&#9664;</button>
-                                        <div id="current-month-display" class="month-name">OCAK</div>
-                                        <button id="next-month" aria-label="Next Month" title="Sonraki Ay">&#9654;</button>
-                                    </div>
-                                </div>
-                            <!-- css denmeme -->
-                            <div style="card lis-brd-light wow fadeInUp text-center text-lg-left">
-                                <div card-body pt-0 style="position: relative;
-                                display: -ms-flexbox;
-                                display: flex;
-                                flex-direction: column;
-                                min-width: 0;
-                                word-wrap: break-word;
-                                background-color: #fff;
-                                background-clip: border-box;
-                                border: 1px solid rgba(0, 0, 0, .125);
-                                border-radius: .25rem; padding: 10px;margin-bottom:10px; align-items: center">
-                                                                            <div class="" style="margin-bottom:10px; width: 300px;">
-                                    
-                                            <div>
-                                                            <img class="img-fluid d-md-flex mr-4 border border-white lis-border-width-4 rounded mb-4 mb-md-0" src="https://www.afyonkarahisarmaariftakvimi.com/uploads/gruplar/61bb290fc84136bc81f8ccd61397d744.jpg" alt="User profile picture">
-                                            </div>
-
-                                            <div>
-                                                <p>HATTAT AHMET KARAHİSARİ(1469-1556)</p><p>Hat Sanatı söz konusu olduğunda, akla ilk gelen isimlerin başında Ahmet Karahisari vardır. O'nun eşsiz eserleri bugün de camilerimizi süs-lemektedir. Hele biribirinden güzel "Besmele"leri, pek çok evimizde de tablolar halinde bulunmaktadır. Ahmet Karahisarî bir çok da talebe yetiştirmiştir.<br></p>                                            </div>
-                                        
-                                        </div>
-
-                                        
-                                    
-                                </div> 
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>      
-        <script type="text/javascript">
-       $(document).ready(function() {
-    // Türkçe ay adları
-    const monthNames = [
-        "OCAK", "ŞUBAT", "MART", "NİSAN", "MAYIS", "HAZİRAN",
-        "TEMMUZ", "AĞUSTOS", "EYLÜL", "EKİM", "KASIM", "ARALIK"
-    ];
-
-    let currentDate = new Date();
-    let currentMonth = currentDate.getMonth(); // 0-11 indeksi
-    
-    // CodeIgniter Controller yolunuzu buraya yazın
-    const ajaxUrl = 'https://www.afyonkarahisarmaariftakvimi.com/index/fetch_events'; 
-    
-    function updateCalendar() {
-        // 1. Ay Adını Güncelle
-        $('#current-month-display').text(monthNames[currentMonth]);
-
-        const $timelineContainer = $('#timeline-container');
-        // Yükleniyor mesajını göster
-        $timelineContainer.empty().append('<div class="timeline-item"><div class="timeline-content"><p>Olaylar yükleniyor...</p></div></div>'); 
-
-        // 2. AJAX ile CI Controller'dan Olayları Çekme
-        $.ajax({
-            url: ajaxUrl, 
-            type: 'GET',
-            data: { month: currentMonth }, // Ay indeksini (0-11) gönderiyoruz
-            dataType: 'json',
-            success: function(events) {
-                $timelineContainer.empty(); 
-
-                if (events.length > 0) {
-                    events.forEach(event => {
-                        // Kırmızı gün stili için sınıf belirleme
-                        
-                        const isRedClass = event.isRed ? 'kirmizi' : '';
-
-                        const dayClass = `day-abbr ${event.dayAbbr} ${isRedClass}`;
-
-                        // Kırmızı gün stili için sınıf belirleme
-                        
-                        
-                        // Zaman Çizelgesi Öğesi HTML'i oluşturma<span class="date-info">${event.date}</span>
-                        const timelineItem = `
-                            <div class="timeline-item">
-                            <a href="https://www.afyonkarahisarmaariftakvimi.com/index/konu/${event.id}" class="timeline-link">
-                                <div class="timeline-date">
-                                    <span class="${dayClass}">${event.dayAbbr}</span>
-                                    
-                                </div>
-                                <div class="timeline-content">
-                                    <p>${event.date} - ${event.text}</p>
-                                </div>
-                                </a>
-                            </div>
-                        `;
-                        $timelineContainer.append(timelineItem);
-                    });
-                } else {
-                    $timelineContainer.append('<div class="timeline-item"><div class="timeline-content"><p>Bu ay için tanımlanmış bir olay bulunmamaktadır.</p></div></div>');
-                }
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.error("AJAX Hatası:", textStatus, errorThrown, jqXHR.responseText);
-                $timelineContainer.empty().append('<div class="timeline-item"><div class="timeline-content"><p>Olaylar yüklenirken bir hata oluştu.</p></div></div>');
-            }
-        });
-    }
-
-    // Buton Tıklamaları
-    $('#prev-month').on('click', function() {
-        currentMonth = (currentMonth - 1 + 12) % 12;
-        updateCalendar();
-    });
-
-    $('#next-month').on('click', function() {
-        currentMonth = (currentMonth + 1) % 12;
-        updateCalendar();
-    });
-
-    updateCalendar();
-});
-
+loadMonth("temmuz");
 </script>
-       
-        <!-- Footer-->
-        <section class="image-bg footer lis-grediant grediant-bt pb-0">
-            <div class="background-image-maker"></div>
-            <div class="holder-image"> <img src="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/images/bg3.jpg" alt="" class="img-fluid d-none"> </div>
-            <div class="container">
-                <div class="row pb-5">
-                    <div class="col-12 col-md-8">
-                        <div class="row">
-                            <div class="col-12 col-sm-6 col-lg-3 mb-4 mb-lg-0">
-                                <h5 class="footer-head">Menüler</h5>
-                                <ul class="list-unstyled footer-links lis-line-height-2_5">
-                                    <li>
-                                        <a href="https://www.afyonkarahisarmaariftakvimi.com/"><i class="fa fa-angle-right pr-1"></i> Ana Sayfa</A>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.afyonkarahisarmaariftakvimi.com/hakkimizda.html"><i class="fa fa-angle-right pr-1"></i> Hakkımızda</A>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.afyonkarahisarmaariftakvimi.com/kaynakca.html"><i class="fa fa-angle-right pr-1"></i> Kaynakça</A>
-                                    </li>
-                                </ul>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="footer-logo">
-                            <a href="#"><img src="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/images/logo-v1.png" alt="" class="img-fluid" /></a>
-                        </div>
-                        <p class="my-4">Bu site bir eğitim projesidir. Ticari bir faaliyet yürütmemektedir.</u></a>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom mt-5 py-4">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-6 text-center text-md-left mb-3 mb-md-0"> <span> &copy; 2026<a href="https://www.afyonkarahisarmaariftakvimi.com/" class="lis-primary"> afyonkarahisarmaariftakvimi.com</a></span> Tüm haklarımız saklıdır.</div>
-                        <div class="col-12 col-md-6 text-center text-md-right">
-                            <ul class="list-inline footer-social mb-0">
-                                <li class="list-inline-item pr-3">
-                                    <A href="#"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item pr-3">
-                                    <A href="#"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item pr-3">
-                                    <A href="#"><i class="fa fa-linkedin"></i></a>
-                                </li>
-                                <li class="list-inline-item pr-3">
-                                    <A href="#"><i class="fa fa-tumblr"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <A href="#"><i class="fa fa-pinterest-p"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End  Footer-->
-        <!-- Top To Bottom-->
-        <a href="#" class="scrollup text-center lis-bg-primary lis-rounded-circle-50">
-            <div class="text-white mb-0 lis-line-height-1_7 h3"><i class="icofont icofont-long-arrow-up"></i></div>
-        </a>
-        <!-- End Top To Bottom -->
-                            <!-- üye silş modal başlangıç-->
-                            <!-- Modal -->
-                            <div class="modal fade" id="uyeSilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #ffffff">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Üye Silinsin mi?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
-                                    <button type="button" class="btn btn-primary">Evet</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- üye sil modal bitiş -->
 
-                            <!-- üye onay modal başlangıç-->
-                            <!-- Modal -->
-                            <div class="modal fade" id="uyeOnayModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-color: #ffffff">
-                              <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Üye onaylansın mı?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>
-                                  </div>
-                                  
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
-                                    <button type="button" class="btn btn-primary">Evet</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <!-- üye onay modal bitiş -->
-        <!-- resim sil modal başlangıç -->                            
-        <div class="modal fade" id="resimsilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-          <div class="modal-dialog" role="document" style="background-color: white; text-align: left;">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Resim silinecek</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body p-3">
-                <font>Seçili resim <b>silinsin</b> mi?</font>              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hayır</button>
-                <a id="resimsilAhref" class="btn btn-primary" href="">Evet</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- resim sil modal bitiş -->                                                        
-        <!-- Login /Register Form-->
-        <div class="container">
-
-
-            <div id="modal" class="popupContainer" tabindex="-1" style="display: none;">
-                <header class="popupHeader" style="text-transform:none;">
-                    <span class="header_title">Giriş Yap</span>
-                    <span class="modal_close"><i class="fa fa-times"></i></span>
-                </header>
-
-                <div class="popupBody">
-                    <!-- Social Login -->                       
-
-                   
-
-                    <!-- Register Form -->
-                    <div class="user_register">
-                        <form>
-                            <p class="KayitCevap"></p>    
-                            <input type="text" name="kayitKadi" class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Kullanıcı Adınız" />
-                            <br />
-
-
-                            <input type="email" name="kayitKmail"  class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Mail Adresiniz" />
-                            <br />
-
-
-                            <input type="password" name="kayitKsifre"  class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Şifreniz" />
-                            <br />
-
-
-                            <input type="password" name="kayitKsifreTekrar"  class="form-control border-top-0 border-left-0 border-right-0 rounded-0" placeholder="Şifreniz (Tekrar)" />
-                            <br />                            
-
-                            <div class="checkbox">
-                                <input name="eBultenOnay" id="send_updates" type="checkbox" />
-                                <label for="send_updates">Olaylardan haberim olsun istiyorum.</label>
-                            </div>
-                            <div class="checkbox">
-                                <label for="kosul_kabul">Hesap oluşturarak, <a target="_blank" href="https://www.afyonkarahisarmaariftakvimi.com/gizlilik_politikasi.html" >Gizlilik Politikası</a>, <a target="_blank" href="https://www.afyonkarahisarmaariftakvimi.com/hizmet_sartlari.html">Kullanım Koşulları</a> ve <a target="_blank" href="https://www.afyonkarahisarmaariftakvimi.com/cerez_politikasi.html">Çerez Politikası</a> kabul etmiş sayılırsınız.</label>
-                            </div>                            
-                            <div class="action_btnsKayit">
-                                <a href="#" class="btn btn-primary btn-default mt-3 w-100">Kaydol</a>
-                            </div>
-                        </form>
-                        <br/>
-                        <!--
-                        Sosyal hesaplarınızla kaydolun<br/>
-                        <ul class="list-inline my-0">
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-linkedin"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-tumblr"></i></a></li>
-                            <li class="list-inline-item mr-0"><a href="#" class="lis-light lis-social border lis-brd-light text-center lis-line-height-2_3 rounded d-block"><i class="fa fa-pinterest-p"></i></a></li>
-                        </ul>
-                        <hr/>-->
-                        Benim zaten bir hesabım var <a href="#modal" class="login_form">giriş yap</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Login /Register Form-->
-        <!-- jQuery -->
-        <script src="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/js/plugins.min.js"></script>
-        <script src="https://www.afyonkarahisarmaariftakvimi.com/include/template/dist/js/common.js"></script>
-    </body>
-
-<script type="text/javascript">
-   var delay = (function(){
-        var timer = 0;
-        return function(callback, ms){
-            clearTimeout (timer);
-            timer = setTimeout(callback, ms);
-        };
-    })();
-    //grup öneri arama işlemi başl 
-    $('#grupOneriArama').keyup(function () {
-       delay(function(){
-            if($('#grupOneriArama').val().length > 2) {
-                $('#grupOneriSonuc').html("");
-                var kelime = $('#grupOneriArama').val();
-                var tablo = "grup";
-                var loaderUrl = "https://www.afyonkarahisarmaariftakvimi.com/images/";
-                $('#grupOneriSonuc').html('<img src="'+loaderUrl+'loader.gif" />');
-                //$("#grupOneriSonuc").html("");
-              //adres var mı kontrol basl
-                  $.ajax({
-                    type: "POST",
-                    url: "https://www.afyonkarahisarmaariftakvimi.com/uye/oneriGetir/",
-                    data: {kelime: kelime,tablo: tablo},
-                      success: function(res){
-                        $('#grupOneriSonuc').html("");
-                        
-                        $.each($.parseJSON(res), function(index, value){
-                            if(index != ""){
-                                var row="";
-                                row +=value;
-                                $('#grupOneriSonuc').append(row);
-                            }
-                        });                        
-                        
-
-                      }
-                  });
-              //ayarlar kullanıcı adı kontrol end               
-            }else{
-                $('#grupOneriSonuc').html("");
-            }
-        },1000);        
-    });
-    //grup öneri arama işlemi bitiş 
-    var slug = function(text) {
-        var trMap = {
-            'çÇ':'c',
-            'ğĞ':'g',
-            'şŞ':'s',
-            'üÜ':'u',
-            'ıİ':'i',
-            'öÖ':'o'
-        };
-        for(var key in trMap) {
-            text = text.replace(new RegExp('['+key+']','g'), trMap[key]);
-        }
-        return  text.replace(/[^-a-zA-Z0-9\s]+/ig, '') // remove non-alphanumeric chars
-                    .replace(/\s/gi, "-") // convert spaces to dashes
-                    .replace(/[-]+/gi, "-") // trim repeated dashes
-                    .toLowerCase();
-        }
-        //kullanıcı adı düzelt başlangıç
-    var ukAdiSlug = function(text) {
-        var trMap = {
-            'çÇ':'c',
-            'ğĞ':'g',
-            'şŞ':'s',
-            'üÜ':'u',
-            'ıİ':'i',
-            'öÖ':'o'
-        };
-        for(var key in trMap) {
-            text = text.replace(new RegExp('['+key+']','g'), trMap[key]);
-        }
-        return  text.replace(/[^-a-zA-Z0-9\s]+/ig, '') // remove non-alphanumeric chars
-                    .replace(/\s/gi, "") // convert spaces to dashes
-                    .replace(/[-]+/gi, "") // trim repeated dashes
-                    .toLowerCase();
-        }        
-
-        //kullanıcı adı düzelt bitiş
-        //ayarlar kullanıcı adı kontrol basl 
-        $("#ukAdi").on("input",function() {
-          //adres var mı kontrol basl
-              var ukAdi = ukAdiSlug($("#ukAdi").val());
-              $.ajax({
-                type: "POST",
-                url: "https://www.afyonkarahisarmaariftakvimi.com/olustur/ukAdikontrol",
-                data: {ukAdi: ukAdi},
-                  success: function(res){
-                    if(res=="buvar")
-                    {
-                        $(".kullanicikontrolcevap").html('<font style="color:red !important">Bu kullanıcı adı kullanılmaktadır.</font>');
-                        $("#ukAdi").val(ukAdi);
-                         $("#kaydet").prop('disabled', true)
-                    }
-                    if(res=="buyok"){
-                        $(".kullanicikontrolcevap").html('<font style="color:green !important">Bu kullanıcı adını kullanabilirsiniz.</font>');
-                            $("#ukAdi").val(ukAdi);
-                        $("#kaydet").prop('disabled', false)
-                    }
-                    
-
-                  }
-              });
-          //ayarlar kullanıcı adı kontrol end   
-          //$("#t_adresi").html(slug($("#gAdres").val()));
-        });
-
-        //isim kontrol basl 
-        $("#gAdi").on("input",function() {
-          //adres var mı kontrol basl
-              var grupAdi = $("#gAdi").val();
-              $.ajax({
-                type: "POST",
-                url: "https://www.afyonkarahisarmaariftakvimi.com/olustur/grupAdikontrol",
-                data: {grupAdi: grupAdi},
-                  success: function(res){
-                    if(res=="buvar")
-                    {
-                        $(".gAdikontrolcevap").html('<font style="color:red !important">Bu isim kullanılmaktadır. Başka bir isim giriniz.</font>');
-                         $("#kaydet").prop('disabled', true)
-                    }
-                    if(res=="buyok"){
-                        $(".gAdikontrolcevap").html('<font style="color:green !important">Bu isim kullanıma uygundur.</font>');
-                        $("#kaydet").prop('disabled', false)
-                    }
-                    
-
-                  }
-              });
-          //adres varmı kontrol end   
-          //$("#t_adresi").html(slug($("#gAdres").val()));
-        });
-
-        //isim kontrol bitis 
-
-        $("#gAdres").on("input",function() {
-          //adres var mı kontrol basl 
-              var adres = slug($("#gAdres").val());
-              $.ajax({
-                type: "POST",
-                url: "https://www.afyonkarahisarmaariftakvimi.com/olustur/adreskontrol",
-                data: {adres: adres},
-                  success: function(res){
-                    if(res=="buvar")
-                    {
-                      
-                      $(".kontrolcevap").html('<font style="color:red !important">Bu adres kullanılmaktadır. Başka bir adres giriniz.</font>');
-
-                      $("#kaydet").prop('disabled', true)
-                    }
-                    if(res=="buyok"){
-                        $(".kontrolcevap").html('<font style="color:green !important">Bu adresi kullanabilirsiniz.</font>');
-                        $("#kaydet").prop('disabled', false)
-                    }
-                    
-
-                  }
-              });
-          //adres varmı kontrol end   
-          $("#t_adresi").html(slug($("#gAdres").val())+'.html');
-          $("#urladresi").val(slug($("#gAdres").val()))
-        });
-
-      function maildogrula(sEmail){
-        alert('dogrulama fonk');
-          var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-          if (filter.test(sEmail)) {
-              return true;
-          }
-          else {
-              return false;
-          }
-      }    
-      
-    // Ajax post
-      $(document).ready(function() {
-        //
-        $(".login_form").click(function(){
-            $("html, body").animate({ scrollTop: 0 }, "fast");
-            $(".popupContainer").css('position','absolute');
-
-        });        
-        //
-        $("#formProfilResimKayit").submit(function( event ) {
-            $("#loaderID").show();
-        });
-//il ve ilçeler çağıran fonksiyon
-        $("#grup_duzenle_gSehir").on("change", function(){
-            var sid = $(this).val();
-            $("#grup_duzenle_gilceler").attr("disabled", false).html("<option value='0'>Seçin..</option>");
-            //alert(sid);
-            ilceleri_getir(sid);
-
-        });
-        function ilceleri_getir(sid){
-            
-            var baseUrl = "https://www.afyonkarahisarmaariftakvimi.com/";
-            var baseilceUrl = baseUrl + '/uye/ilceler_getir/';
-            $.ajax({
-                url: baseilceUrl,
-                type: "GET",
-                data:{
-                    'sid': sid
-                },
-                success: function(sonuc){
-                    $.each($.parseJSON(sonuc), function(index, value){
-                        if(index != ""){
-                            var row="";
-                            row +='<option value="'+value+'">'+value+'</option>';
-                            $('#grup_duzenle_gilceler').append(row);
-                        }
-                    });
-                }});
-        }        
-// il ve ilçeler çağırdan fonksiyon
-//il ve ilçeler çağıran fonksiyon
-       $("#etkinlik_duzenle_eSehir").on("change", function(){
-            var sid = $(this).val();
-            $("#etkinlik_duzenle_eilceler").attr("disabled", false).html("<option value='0'>Seçin..</option>");
-            //alert(sid);
-            etkinlik_ilceleri_getir(sid);
-
-        });
-        function etkinlik_ilceleri_getir(sid){
-            var baseUrl = "https://www.afyonkarahisarmaariftakvimi.com/";
-            var baseilceUrl = baseUrl + '/uye/ilceler_getir/';
-            $.ajax({
-                url: baseilceUrl,
-                type: "GET",
-                data:{
-                    'sid': sid
-                },
-                success: function(sonuc){
-                    $.each($.parseJSON(sonuc), function(index, value){
-                        if(index != ""){
-                            var row="";
-                            row +='<option value="'+value+'">'+value+'</option>';
-                            $('#etkinlik_duzenle_eilceler').append(row);
-                        }
-                    });
-                }});
-        }              
-// il ve ilçeler çağırdan fonksiyon
-//Grup yorumlar tıklama ile toplam puanı güncelleme start  
-      var gruppuanguncelle = function(bDurum,yid,gid){
-        var s = "https://www.afyonkarahisarmaariftakvimi.com/";
-        var yorumAdres = '#y'+yid;
-        var kalpID = '#k'+yid;
-        $.ajax({
-            type: "GET",
-            url: s+'/gozat/grup_yorum_jquery_begeni_sayisi',
-            data:{
-                'yid': yid,
-                'gid': gid
-            },
-            success: function (res) {
-                if(typeof(res) === 'Undefined'){
-                    $(yorumAdres).html('0');
-                    console.log('here is the response', res);
-                }else{
-                    if(bDurum==1){
-
-
-                        $(kalpID).removeClass('fa-heart-o');
-                        $(kalpID).addClass('fa-heart');
-                        $(kalpID).effect("bounce","slow");
-                    }else if(bDurum ==0){
-                        $(kalpID).removeClass('fa-heart');
-                        $(kalpID).addClass('fa-heart-o');
-                        setTimeout(function(){ 
-                            $(kalpID).removeClass('fa-spin');
-                        }, 2000);                        
-                    }
-                    
-                    $(yorumAdres).html(res);
-                }
-            }
-        });        
-          
-      } 
-//Grup yorumlar tıklama ile toplam puanı güncelleme start 
-//beğeni ve oylama başl
-        $("ul #begenUrl").click(function(event) {
-             var durum = $(this).find("font").html();
-            var varDeger = $(this);
-            var yid = $(this).find("#yorumid").val();
-            var gid = $(this).find("#grupid").val();
-
-            var grupBegenUrl = $(this).attr('value');
-            var dataRate = durum;
-            $.ajax({
-                type: "GET",
-                url: grupBegenUrl,
-                data: dataRate,
-                success: function (res) {
-                    if(res){
-                        if(durum=="Beğen"){
-                            varDeger.find("font").html("Beğenmekten vazgeç");
-                            var bDurum = 1;
-                            varDeger.find('#buttonKalp').removeClass('fa-heart-o');
-                            varDeger.find('#buttonKalp').addClass('fa-heart');
-                            gruppuanguncelle(bDurum,yid,gid);
-                        }else if(durum=="Beğenmekten vazgeç"){
-                            varDeger.find("font").html("Beğen");
-                            varDeger.find('#buttonKalp').removeClass('fa-heart');
-                            varDeger.find('#buttonKalp').addClass('fa-heart-o');
-                            var bDurum = 0;
-                            gruppuanguncelle(bDurum,yid,gid);
-                        }
-                        
-                    }
-                }
-            });
-        });
-
-//grupOneriButton başl
- 
-// grup öneri button bitiş 
-
-
-//Etkinlik tıklama toplam puanı ile güncelleme start  
-      var puanguncelle = function(bDurum,yid,eid){
-        var s = "https://www.afyonkarahisarmaariftakvimi.com/";
-        var yorumAdres = '#y'+yid;
-        var kalpID = '#k'+yid;
-        $.ajax({
-            type: "GET",
-            url: s+'/gozat/etkinlik_jquery_begeni_sayisi',
-            data:{
-                'yid': yid,
-                'eid': eid
-            },
-            success: function (res) {
-                if(typeof(res) === 'Undefined'){
-                    $(yorumAdres).html('0');
-                    console.log('here is the response', res);
-                }else{
-                    if(bDurum==1){
-
-
-                        $(kalpID).removeClass('fa-heart-o');
-                        $(kalpID).addClass('fa-heart');
-                        $(kalpID).effect("bounce","slow");
-                    }else if(bDurum ==0){
-                        $(kalpID).removeClass('fa-heart');
-                        $(kalpID).addClass('fa-heart-o');
-                        setTimeout(function(){ 
-                            $(kalpID).removeClass('fa-spin');
-                        }, 2000);                        
-                    }
-                    
-                    $(yorumAdres).html(res);
-                }
-            }
-        });        
-          
-      } 
-//Etkinlik tıklama ile güncelleme start 
-//etkinlik için 
-        $("ul #begenYorumEtkinlik").click(function(event) {
-            var durum = $(this).find("font").html();
-            var varDeger = $(this);
-            var yid = $(this).find("#yorumid").val();
-            var eid = $(this).find("#etkinlikid").val();
-            var grupBegenUrl = $(this).attr('value');
-            var dataRate = durum;
-            $.ajax({
-                type: "GET",
-                url: grupBegenUrl,
-                data: dataRate,
-                success: function (res) {
-                    if(res){
-                        if(durum=="Beğen"){
-                            varDeger.find("font").html("Beğenmekten vazgeç");
-                            var bDurum = 1;
-                            varDeger.find('#buttonKalp').removeClass('fa-heart-o');
-                            varDeger.find('#buttonKalp').addClass('fa-heart');
-                            puanguncelle(bDurum,yid,eid);
-                        }else if(durum=="Beğenmekten vazgeç"){
-                            varDeger.find("font").html("Beğen");
-                            varDeger.find('#buttonKalp').removeClass('fa-heart');
-                            varDeger.find('#buttonKalp').addClass('fa-heart-o');
-                            var bDurum = 0;
-                            puanguncelle(bDurum,yid,eid);
-                        }
-                        
-                    }
-                }
-            });
-            //
-        });
-//beğeni ve oylama biti     
-
-//yorum resim ekleme 
-        
-        if(window.File && window.FileList && window.FileReader) {
-         $(".file").on("change",function(e) {
-         var files = e.target.files ,
-         filesLength = files.length ;
-         for (var i = 0; i < filesLength ; i++) {
-         var f = files[i]
-         var fileReader = new FileReader();
-         fileReader.onload = (function(e) {
-         var file = e.target;
-         $("<div style='float:left; margin-right:10px; text-align: right;' class='gallery text-center lis-relative'><img  class='img-fluid rounded' style='width:60px; height:60px;' src='"+e.target.result+"'/></div>",{
-         class : "resimOnizleme",
-         src : e.target.result,
-         title : file.name
-         }).insertAfter(".temizlemeDiv");
-         });
-         fileReader.readAsDataURL(f);
-         }
-        });
-         } else { alert("Tarayıcınız bu özelliği desteklememektedir.") }                         
-// yorum resim ekleme 
-
-//yıldız oylama başlangıç
-        $(function() {
-          $(".rate i").css('cursor', 'pointer');
-          $(".rate i").click(function() {
-
-            $(this).add($(this).prevAll("i")).removeClass("fa-star-o").addClass("fa-star");
-            $(this).nextAll("i").removeClass("fa-star").addClass("fa-star-o");
-            $($(this).parent().parent().find("input")[0]).val($(this).parent().find(".fa-star").length)
-            console.log($(this).closest('.rate').data('target') + ': ' + $('input[name="' + $(this).closest('.rate').data('target') + '"]').val());
-            var puan = $(this).siblings('i.fa.fa-star').length + 1;
-            var etkinlikPuanlaUrl = $('input[name="etkinlikPuanUrl"]').val()+'/'+puan; //
-            //alert(etkinlikPuanlaUrl);
-            //oylama
-            $.ajax({
-                type: "GET",
-                data: puan,
-                url: etkinlikPuanlaUrl,
-                success: function (res) {
-                    if(res){
-                        window.location.reload();
-                    }
-                }
-            });
-            //oylama
-          });
-        });
-
-        
-//yıldız oylama bitiş
-//albüm silme kodları başlangıç resimsilModal resimsilAhref
-    $("#resimsil a").click(function(event) {
-      var rid = $(this).attr('id');
-      var s = "https://www.afyonkarahisarmaariftakvimi.com/uye/resimSil/";
-      if(rid!=0){
-        $('#resimsilAhref').attr('href',s+rid);
-        $('#resimsilModal').modal('show');
-      }
-    });
-// albüm silme kodları bitiş 
-//grup oneri gonder başl
-
-    $(document).on( "click", "#davetButton", function() { //25.02 eklendi
-        var aliciId = $(this).find('input').val();
-        var gid = $('#grupId').val();
-        var varDeger = $(this);
-        var baseurl = "https://www.afyonkarahisarmaariftakvimi.com/";
-        if(aliciId != ""){
-              $.ajax({
-                type: "POST",
-                url: baseurl+"uye/grupUyeOneriKaydet/",
-                data: {alici: aliciId, gid: gid},
-                  success: function(res){
-                    
-                    if(res=="tamam")
-                    {
-                        varDeger.find('a').html("Davet Edildi");
-                    }else{
-                        varDeger.find('a').html("Davet Edildi");
-                    }
-                   
-
-                  }
-              });            
-        }
-    });
-//grup oneri gonder     
-        //modal kodlari
-       // $('#exampleModal').modal('show');
-
-        $(".action_btns").click(function(event) {
-          event.preventDefault();
-          var usermail = $("input[name='usermail']").val();
-          var password =  $("input[name='password']").val();
-         
-          if(password != '' && usermail != ''){   
-              $.ajax({
-                type: "POST",
-                url: "https://www.afyonkarahisarmaariftakvimi.com/login/",
-                data: {usermail: usermail, password: password},
-                  success: function(res){
-                    if(res=="mailhata")
-                    {
-                      $(".cevap").html('<i class="fa fa-envelope lis-primary lis-left-0"></i> <font style="color:#ff214f !important">Mail adresinizi kontrol ediniz.</font>');
-                    }
-                    if(res=="giristamam"){
-                        window.location.reload();
-                        
-                    }
-                    if(res=="girishata"){
-                        $(".cevap").html('<font style="color:#ff214f !important">Kullanıcı bilgileriniz hatalı</font>');
-                    }
-
-                  }
-              });
-                       
-          }else{//else
-            $(".cevap").html("<font style='color:red'>Hay aksi! Sanırım bir şeyler eksik</font>"); 
-          }
-        });
-
-        // yeni kullanıcı kayıt kontrolü başlangıç
-        $(".action_btnsKayit").click(function(event) {
-          event.preventDefault();
-            var kayitKmail = $("input[name='kayitKmail']").val();
-            var kayitKadi =  $("input[name='kayitKadi']").val();
-            var kayitKSifre =  $("input[name='kayitKsifre']").val();
-            var kayitKsifreTekrar =  $("input[name='kayitKsifreTekrar']").val();
-            var eBultenOnay =  $("input[name='eBultenOnay']").val();
-
-              if(kayitKmail != '' && kayitKadi != '' && kayitKSifre != '' && kayitKsifreTekrar != ''){
-
-                if(kayitKSifre == kayitKsifreTekrar){
-                            
-                          $.ajax({
-                            type: "POST",
-                            url: "https://www.afyonkarahisarmaariftakvimi.com/index.php/index/yeniUyeKayit/",
-                            data: {kayitKmail: kayitKmail, kayitKadi: kayitKadi,kayitKSifre: kayitKSifre, eBultenOnay: 1},
-                              success: function(res){
-                                if(res=="kayitSaptandi")
-                                {
-                                  $(".KayitCevap").html('<i class="fa fa-exclamation lis-primary lis-left-0"></i> <font style="color:#ff214f !important">Mail veya kullanıcı adı kullanılmaktadır.</font>');
-                                }
-                                if(res=="kayitTamamlandi"){
-                                    var url = "https://www.afyonkarahisarmaariftakvimi.com//uye/profil/";
-                                    $(location).attr('href',url);
-                                }
-                                if(res=="kayitHatasi"){
-                                    $(".KayitCevap").html('<font style="color:#ff214f !important">Kullanıcı bilgileriniz hatalı</font>');
-                                }
-
-                                if(res=="kayitSifreHatasi"){
-                                    $(".KayitCevap").html('<font style="color:#ff214f !important">Şifreniz en az 8 karakterli olmalı ve bir büyük harf içermelidir.</font>');
-                                }
-                                if(res=="kayitKullaniciAdiHatasi"){
-                                    $(".KayitCevap").html('<font style="color:#ff214f !important">Kullanıcı adınız en az 4 karakter, küçük harf ve boşluksuz olmalıdır.</font>');
-                                }
-                              }
-                          });
-                    }else{
-                        $(".KayitCevap").html('<font style="color:#ff214f !important">Parolalar eşleşmedi.</font>');
-                    }   
-              }else{//else
-                $(".KayitCevap").html("<font style='color:red'>Lütfen bilgileri eksiksiz giriniz.</font>"); 
-              }
-        });
-        // yeni kullanıcı kayıt kontroül bitiş
-
-
-        //ayarlar kayıt başlangıç 
-        $("#ayarlarKayitButton").click(function(event) {
-
-            // uyarı kapatma kodları başlangıç
-            $("#ayarlarKayitCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#ayarlarKayitCevap").css('display', 'none');
-                window.location.reload();
-            });
-            $("#ayarlarHataCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#ayarlarHataCevap").css('display', 'none');
-                
-            });
-            //uyarı kapatma kodları bitis 
-          event.preventDefault();
-           // var ayarlarUkAdi = $("input[name='ayarlarUkAdi']").val();
-            var ayarlarUadi =  $("input[name='ayarlarUadi']").val();
-            var ayarlarUsoyadi =  $("input[name='ayarlarUsoyadi']").val();
-            var ayarlarUsehir =  $("input[name='ayarlarUsehir']").val();
-            var ayarlarUtel =  $("input[name='ayarlarUtel']").val();
-           // var ayarlarUmail =  $("input[name='ayarlarUmail']").val();
-            var ayarlarUgizlilik =  $("input[name='ayarlarUgizlilik']:checked").val();
-            var ayarlarUbiyografi =  $("#ayarlarUbiyografi").val(); 
-              if(true){
-
-                if(true){
-
-                          $.ajax({
-                            type: "POST",
-                            url: "https://www.afyonkarahisarmaariftakvimi.com/uye/ayarlarKayit/",
-                            data: {ayarlarUadi: ayarlarUadi,ayarlarUsoyadi: ayarlarUsoyadi,ayarlarUsehir : ayarlarUsehir,ayarlarUtel : ayarlarUtel,ayarlarUgizlilik : ayarlarUgizlilik, ayarlarUbiyografi : ayarlarUbiyografi},
-                              success: function(res){
-                                if(res=="kayitSaptandi")
-                                {
-                                  $("#ayarlarKayitCevap").show();
-                                }
-                                if(res=="kayitTamamlandi"){
-                                    $("#ayarlarKayitCevap").show();
-                                }
-                                if(res=="kayitHatasi"){
-                                    $("#ayarlarHataCevap").show();
-                                }
-
-                              }
-                          });
-                    }else{
-                        //$("#ayarlarHataCevap").html('<font style="color:#ff214f !important">Parolalar eşleşmedi.</font>');
-                    }   
-              }else{//else
-                //$("#ayarlarHataCevap").html("<font style='color:red'>Lütfen bilgileri eksiksiz giriniz.</font>"); 
-              }
-        });
-        //ayarlar kayıt bitiş
-
-
-        //duyurular kayıt başlangıç 
-        $("#duyuruKayitButton").click(function(event) {
-           
-            // uyarı kapatma kodları başlangıç
-            $("#duyuruKontrolCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#duyuruKontrolCevap").css('display', 'none');
-                
-            });
-            $("#duyuruHataCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#duyuruHataCevap").css('display', 'none');
-                
-            });
-            //uyarı kapatma kodları bitis 
-          event.preventDefault();
-           // var ayarlarUkAdi = $("input[name='ayarlarUkAdi']").val();
-            var duyuruGid =  $("input[name='duyuru_gid']").val();
-            var duyuruKonusu =  $("input[name='duyuru_konusu']").val();
-            var duyuruKime =  $("#duyuru_kime").val();
-            var duyuru_durum =  $("#duyuru_durum").val();
-            var duyuruIcerik =  $("#duyuru_icerik").val();
-            
-              if(true){
-
-                if(true){
-
-                          $.ajax({
-                            type: "POST",
-                            url: "https://www.afyonkarahisarmaariftakvimi.com/olustur/duyuruKayit/",
-                            data: {duyuruGid: duyuruGid,duyuruKonusu: duyuruKonusu,duyuru_durum: duyuru_durum,duyuruKime : duyuruKime,duyuruIcerik : duyuruIcerik},
-                              success: function(res){
-                                if(res=="kayitSaptandi")
-                                {
-                                  $("#duyuruHataCevap").show();
-                                }
-                                if(res=="kayitTamamlandi"){
-
-                                    $("#duyuruKontrolCevap").show();
-                                }
-                                if(res=="kayitHatasi"){
-                                    $("#duyuruHataCevap").show();
-                                }
-
-                              }
-                          });
-                    }else{
-                        //$("#ayarlarHataCevap").html('<font style="color:#ff214f !important">Parolalar eşleşmedi.</font>');
-                    }   
-              }else{//else
-                //$("#ayarlarHataCevap").html("<font style='color:red'>Lütfen bilgileri eksiksiz giriniz.</font>"); 
-              }
-        });
-        //duyruu kayıt bitiş        
-        //
-
-        //grup düzenle başlangıç DİKKKAAAAATT GRUP DÜZENLEEE
-        
-        $("#grup_duzenle_kaydet_butonu").click(function(event) {
-            // uyarı kapatma kodları başlangıç
-            $("#grupDuzenleKontrolCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#grupDuzenleKontrolCevap").css('display', 'none');
-                //window.location.reload(); sayfa yenileme iptal edildi.
-            });
-            $("#grupDuzenleHataCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#grupDuzenleHataCevap").css('display', 'none');
-                
-            });
-            //uyarı kapatma kodları bitis 
-          event.preventDefault();
-           // var ayarlarUkAdi = $("input[name='ayarlarUkAdi']").val();
-            var gdId            =  $("input[name='grup_duzenle_gid']").val();
-            var gdGAdi          =  $("input[name='grup_duzenle_gAdi']").val();
-            var gdSehir         =  $('#grup_duzenle_gSehir').children("option:selected").html();
-            var gdilce         =  $('#grup_duzenle_gilceler').children("option:selected").html();
-            var gdKontenjan     =  $("input[name='grup_duzenle_gKontenjan']").val();
-            var gdIlgıAlanlari  =  $("input[name='grup_duzenle_gIlgiAlanlari']").val();
-            var gdKategori      =  $("#grup_duzenle_gKategori").val();
-            var gdUyelikTuru    =  $("input[name='grup_duzenle_gUyelikTuru']:checked").val();
-            var gdAciklama      =  $("#grup_duzenle_gAciklama").val();
-
-            if(gdId !="" || gdAdi !="" || gdSehir!=0){
-                    
-                      $.ajax({
-                        type: "POST",
-                        url: "https://www.afyonkarahisarmaariftakvimi.com/uye/grupDuzenleKayit/",
-                        data: {gdId: gdId,gdGAdi: gdGAdi,gdSehir: gdSehir,gdilce: gdilce,gdKontenjan: gdKontenjan,gdIlgıAlanlari: gdIlgıAlanlari,gdKategori:  gdKategori,gdUyelikTuru: gdUyelikTuru,gdAciklama: gdAciklama},
-                          success: function(res){
-
-                            if(res=="kayitSaptandi")
-                            {
-                              $("#grupDuzenleHataCevap").show();
-                            }
-                            if(res=="kayitTamamlandi"){
-
-                                $("#grupDuzenleKontrolCevap").show();
-                            }
-                            if(res=="kayitHatasi"){
-                                $("#grupDuzenleHataCevap").show();
-                            }
-
-                          }
-                      });
-                }else{
-                    alert(0);
-//                    $("#grupDuzenleHataCevap").show();
-                    //$("#ayarlarHataCevap").html('<font style="color:#ff214f !important">Parolalar eşleşmedi.</font>');
-                }
-        });
-        //duyruu kayıt bitiş 
-        //grup düzenle bitiş
-
-        //etkinlik düzenle başlangıç
-        $("#etkinlik_duzenle_kaydet_butonu").click(function(event) {
-            // uyarı kapatma kodları başlangıç
-            $("#grupDuzenleKontrolCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#grupDuzenleKontrolCevap").css('display', 'none');
-                //window.location.reload(); sayfa yenileme iptal edildi.
-            });
-            $("#grupDuzenleHataCevap").delay(5000).fadeOut(
-              "normal",
-              function(){
-                $("#grupDuzenleHataCevap").css('display', 'none');
-                
-            });
-            //uyarı kapatma kodları bitis 
-          event.preventDefault();
-           // var ayarlarUkAdi = $("input[name='ayarlarUkAdi']").val();
-            var edId            =  $("input[name='etkinlik_duzenle_eid']").val();
-            var edeAdi          =  $("input[name='etkinlik_duzenle_eAdi']").val();
-            var edTarih         =  $("input[name='etkinlik_duzenle_eTarih']").val();
-            var edSaat          =  $("input[name='etkinlik_duzenle_eSaat']").val();
-            var edSehir         =  $('#etkinlik_duzenle_eSehir').children("option:selected").html();
-            var edilce          =  $('#etkinlik_duzenle_eilceler').children("option:selected").html();
-            var edKontenjan     =  $("input[name='etkinlik_duzenle_eKontenjan']").val();
-            var edUcret         =  $("input[name='etkinlik_duzenle_eUcret']").val();
-            var edKategori      =  $("#etkinlik_duzenle_eKategori").val();
-            var edUyelikTuru    =  $("input[name='etkinlik_duzenle_eUyelikTuru']:checked").val();
-            var edAciklama      =  $("#etkinlik_duzenle_eAciklama").val();
-            var edAdres         =  $("#etkinlik_duzenle_eAdres").val();
-
-            if(edId !="" && edeAdi !="" && edSehir!=0 && edTarih!="" && edSaat !="" && edilce !=""){
-
-                      $.ajax({
-                        type: "POST",
-                        url: "https://www.afyonkarahisarmaariftakvimi.com/uye/etkinlikDuzenleKayit/",
-                        data: {edId: edId,edeAdi: edeAdi,edTarih: edTarih,edSaat: edSaat,edSehir: edSehir,edKontenjan: edKontenjan,edilce: edilce,edKategori:  edKategori,edUyelikTuru: edUyelikTuru,edAciklama: edAciklama,edAdres: edAdres,edUcret: edUcret},
-                          success: function(res){
-
-                            if(res=="kayitSaptandi")
-                            {
-                              $("#grupDuzenleHataCevap").show();
-                            }
-                            if(res=="kayitTamamlandi"){
-
-                                $("#grupDuzenleKontrolCevap").show();
-                            }
-                            if(res=="kayitHatasi"){
-                                $("#grupDuzenleHataCevap").show();
-                            }
-
-                          }
-                      });
-                }else{
-                    $("#grupDuzenleHataCevap").show();
-                }
-        });
-        //etkinlik düzenle bitiş 
-      });
-               //scroll kaydırma basl
-       var objDiv = $(".media-chat").length;
-       var scrollPosition = document.querySelector('#chat-content');
-       scrollPosition.scrollTop = objDiv*200;
-        $("#chat-content" ).mouseover(function() { 
-            scrollPosition.scrollTop = objDiv*200;
-        });
-
-        
-               
-       //scroll kaydırma bitis
-</script>
- 
+</body>
 </html>
