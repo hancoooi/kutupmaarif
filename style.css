@@ -37,6 +37,17 @@ main {
 #content {
   width: 70%;
   background: white;
+  .header{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.logo{
+  height:50px;
+}
   padding: 20px;
   border-radius: 5px;
 }
+
