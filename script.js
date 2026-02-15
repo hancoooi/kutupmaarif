@@ -19,13 +19,16 @@ function loadMonth(m){
   }
 }
 
-function showDay(m,d){
-  const box=document.getElementById("detail");
-  if(m==="temmuz" && temmuz[d]){
-    box.innerHTML=`<h2>${temmuz[d].t}</h2><p>${temmuz[d].d}</p><p><b>Kaynak:</b> <a href="${temmuz[d].s}" target="_blank">${temmuz[d].s}</a></p>`;
-  } else {
-    box.innerHTML="<h2>Henüz içerik yok</h2><p>Bu gün daha sonra doldurulacaktır.</p>";
-  }
+function showDay(day){
+  const data = temmuz[day];
+
+  document.getElementById("dayTitle").innerText = data.t;
+
+  document.getElementById("dayText").innerHTML = `
+    <img src="images/temmuz${day}.jpg" class="day-img">
+    <p>${data.d.replace(/\n/g,"<br>")}</p>
+  `;
 }
 
 loadMonth("temmuz");
+
