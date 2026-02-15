@@ -37,7 +37,10 @@ main {
 #content {
   width: 70%;
   background: white;
-  .header{
+  padding: 10px;
+  border-radius: 5px;
+}
+.header{
   display:flex;
   align-items:center;
   justify-content:center;
@@ -48,8 +51,5 @@ main {
   height:28px;
   width:auto;
   display:block;
-}
-  padding: 10px;
-  border-radius: 5px;
 }
 
