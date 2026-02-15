@@ -45,8 +45,11 @@ main {
 }
 
 .logo{
-  height:10px;
+  height:28px;
+  width:auto;
+  display:block;
 }
   padding: 10px;
   border-radius: 5px;
 }
+
